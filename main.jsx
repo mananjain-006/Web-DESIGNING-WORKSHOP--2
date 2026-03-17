@@ -1,37 +1,55 @@
-function calculateResult(){
-let n = document.getElementById("subjects").value;
-let total = 0;
-for(let i=1;i<=n;i++){
-let marks = parseFloat(prompt("Enter marks for Subject " + i));
-total = total + marks;
+let employees = [];
+function addEmployee(){
+let name=document.getElementById("name").value;
+let id=document.getElementById("id").value;
+let salary=parseInt(document.getElementById("salary").value);
+let dept=document.getElementById("dept").value;
+let emp={
+name:name,
+id:id,
+salary:salary,
+department:dept
+};
+employees.push(emp);
+alert("Employee Added");
 }
-let average = total / n;
-let grade;
-let result;
-if(average >= 90){
-grade = "A+";
+function displayEmployees(){
+let output="";
+for(let emp of employees){
+output+=emp.name+" | "+emp.id+" | "+emp.salary+" |"+emp.department+"<br>";
 }
-else if(average >= 75){
-grade = "A";
+document.getElementById("result").innerHTML=output;
 }
-else if(average >= 60){
-grade = "B";
+function filterSalary(){
+let filtered=employees.filter(e=>e.salary>50000);
+let output="";
+for(let emp of filtered){
+output+=emp.name+" | "+emp.salary+"<br>";
 }
-else if(average >= 50){
-grade = "C";
+document.getElementById("result").innerHTML=output;
 }
-else{
-grade = "F";
+function totalSalary(){
+let total=0;
+for(let emp of employees){
+total+=emp.salary;
 }
-if(average >= 40){
-result = "PASS";
+document.getElementById("result").innerHTML="Total Salary = "+total;
 }
-else{
-result = "FAIL";
+function averageSalary(){
+let total=0;
+for(let emp of employees){
+total+=emp.salary;
 }
-document.getElementById("result").innerHTML =
-"Total Marks: " + total + "<br>" +
-"Average Marks: " + average.toFixed(2) + "<br>" +
-"Grade: " + grade + "<br>" +
-"Result: " + result;
+let avg=total/employees.length;
+document.getElementById("result").innerHTML="Average Salary = "+avg;
+}
+function countDepartment(){
+let dept=prompt("Enter Department Name");
+let count=0;
+for(let emp of employees){
+if(emp.department==dept){
+count++;
+}
+}
+document.getElementById("result").innerHTML="Employees in "+dept+" = "+count;
 }
