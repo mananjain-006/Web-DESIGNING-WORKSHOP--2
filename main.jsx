@@ -1,55 +1,37 @@
-let employees = [];
-function addEmployee(){
-let name=document.getElementById("name").value;
-let id=document.getElementById("id").value;
-let salary=parseInt(document.getElementById("salary").value);
-let dept=document.getElementById("dept").value;
-let emp={
-name:name,
-id:id,
-salary:salary,
-department:dept
-};
-employees.push(emp);
-alert("Employee Added");
+let heading = document.getElementById("mainHeading");
+let paragraph = document.getElementById("paragraph");
+let input = document.getElementById("userInput");
+
+let fontSize = 16;
+
+document.getElementById("changeTextBtn").addEventListener("click", function() {
+    if(input.value !== ""){
+        heading.innerHTML = input.value;
+    }
+});
+
+document.getElementById("bgColorbtn").onclick = function() {
+    document.body.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
 }
-function displayEmployees(){
-let output="";
-for(let emp of employees){
-output+=emp.name+" | "+emp.id+" | "+emp.salary+" |"+emp.department+"<br>";
-}
-document.getElementById("result").innerHTML=output;
-}
-function filterSalary(){
-let filtered=employees.filter(e=>e.salary>50000);
-let output="";
-for(let emp of filtered){
-output+=emp.name+" | "+emp.salary+"<br>";
-}
-document.getElementById("result").innerHTML=output;
-}
-function totalSalary(){
-let total=0;
-for(let emp of employees){
-total+=emp.salary;
-}
-document.getElementById("result").innerHTML="Total Salary = "+total;
-}
-function averageSalary(){
-let total=0;
-for(let emp of employees){
-total+=emp.salary;
-}
-let avg=total/employees.length;
-document.getElementById("result").innerHTML="Average Salary = "+avg;
-}
-function countDepartment(){
-let dept=prompt("Enter Department Name");
-let count=0;
-for(let emp of employees){
-if(emp.department==dept){
-count++;
-}
-}
-document.getElementById("result").innerHTML="Employees in "+dept+" = "+count;
-}
+
+document.getElementById("fontSizeBtn").addEventListener("click", function() {
+    fontSize += 2;
+    paragraph.style.fontSize = fontSize + "px";
+});
+
+document.getElementById("togglebtn").addEventListener("click", function() {
+    if(paragraph.style.display === "none"){
+        paragraph.style.display = "block";
+    } else {
+        paragraph.style.display = "none";
+    }
+});
+
+document.getElementById("resetBtn").addEventListener("click", function() {
+    heading.innerHTML = "Welcome to Javascript lab";
+    paragraph.style.display = "block";
+    paragraph.style.fontSize = "16px";
+    document.body.style.backgroundColor = "white";
+    input.value = "";
+    fontSize = 16;
+});
