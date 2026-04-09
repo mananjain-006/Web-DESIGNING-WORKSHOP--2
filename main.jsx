@@ -1,37 +1,29 @@
-let heading = document.getElementById("mainHeading");
-let paragraph = document.getElementById("paragraph");
-let input = document.getElementById("userInput");
+function checkPrime() {
+    const num = parseInt(document.getElementById("number").value);
+    const result = document.getElementById("result");
 
-let fontSize = 16;
-
-document.getElementById("changeTextBtn").addEventListener("click", function() {
-    if(input.value !== ""){
-        heading.innerHTML = input.value;
+    if (isNaN(num)) {
+        result.textContent = "Please enter a valid number.";
+        return;
     }
-});
 
-document.getElementById("bgColorbtn").onclick = function() {
-    document.body.style.backgroundColor = "#" + Math.floor(Math.random()*16777215).toString(16);
-}
+    if (num <= 1) {
+        result.textContent = num + " is not a prime number.";
+        return;
+    }
 
-document.getElementById("fontSizeBtn").addEventListener("click", function() {
-    fontSize += 2;
-    paragraph.style.fontSize = fontSize + "px";
-});
+    let isPrime = true;
 
-document.getElementById("togglebtn").addEventListener("click", function() {
-    if(paragraph.style.display === "none"){
-        paragraph.style.display = "block";
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+            isPrime = false;
+            break;
+        }
+    }
+
+    if (isPrime) {
+        result.textContent = num + " is a PRIME number.";
     } else {
-        paragraph.style.display = "none";
+        result.textContent = num + " is NOT a prime number.";
     }
-});
-
-document.getElementById("resetBtn").addEventListener("click", function() {
-    heading.innerHTML = "Welcome to Javascript lab";
-    paragraph.style.display = "block";
-    paragraph.style.fontSize = "16px";
-    document.body.style.backgroundColor = "white";
-    input.value = "";
-    fontSize = 16;
-});
+}
