@@ -1,0 +1,8 @@
+div{
+    height: 100px;
+ width: 50px;
+ background-color: pink;
+ border-width: 2px;
+ border-style: solid;
+ border-color:brown
+}

@@ -1,0 +1,14 @@
+ h1{
+    color: blue;
+    background-color: black;
+}
+button{
+    color: red;
+    background-color: black;
+}
+p{
+    text-align: end;
+    text-decoration: blue dotted underline;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+}

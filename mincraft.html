@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minecraft - Official Fan Homepage</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #111;
+    color: white;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #2e7d32, #66bb6a);
+    padding: 25px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 28px;
+    text-shadow: 3px 3px black;
+}
+
+/* Navigation */
+nav {
+    background: #1c1c1c;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 25px;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #66bb6a;
+}
+
+/* Hero Section with Minecraft Background */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url("https://images.unsplash.com/photo-1627856013091-fed6e42b9b30?auto=format&fit=crop&w=1920&q=80") no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+/* Dark Overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 22px;
+    margin-bottom: 30px;
+    text-shadow: 3px 3px black;
+}
+
+.hero button {
+    padding: 15px 30px;
+    border: none;
+    background-color: #2e7d32;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    box-shadow: 4px 4px black;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background-color: #66bb6a;
+    transform: scale(1.1);
+}
+
+/* Features Section */
+.features {
+    background-color: #1a1a1a;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.features h3 {
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+.feature-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.feature-box {
+    background-color: #262626;
+    padding: 25px;
+    width: 280px;
+    border: 3px solid #66bb6a;
+    box-shadow: 5px 5px black;
+}
+
+.feature-box h4 {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.feature-box p {
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+/* Footer */
+footer {
+    background: #000;
+    text-align: center;
+    padding: 20px;
+    font-size: 10px;
+}
+
+/* Responsive */
+ (max-width: 768px) {
+    .hero h2 {
+        font-size: 16px;
+    }
+    header h1 {
+        font-size: 20px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <h1>MINECRAFT</h1>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Download</a>
+    <a href="#">Community</a>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <h2>Build. Explore. Survive.</h2>
+        <button>Play Now</button>
+    </div>
+</section>
+
+<section class="features">
+    <h3>Game Features</h3>
+    <img src="https://media.gamestop.com/i/gamestop/10113355-050e3a4b">
+
+    <div class="feature-container">
+
+        <div class="feature-box">
+            <h4>Creative Mode</h4>
+            <p>Unlimited resources and full freedom to build anything you imagine.</p>
+        </div>
+
+        <div class="feature-box">
+            <h4>Survival Mode</h4>
+            <p>Gather resources, craft tools, and survive against dangerous mobs.</p>
+        </div>
+
+        <div class="feature-box">
+            <h4>Multiplayer</h4>
+            <p>Play online with friends and build massive worlds together.</p>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>
